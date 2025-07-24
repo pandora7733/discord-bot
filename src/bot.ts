@@ -1,6 +1,9 @@
 import { Client, GatewayIntentBits } from 'discord.js';
 import dotenv from 'dotenv';
+import { connectDB } from './database/index';
 dotenv.config();
+
+connectDB();
 
 const client = new Client({
     intents: [
@@ -42,3 +45,5 @@ client.on('messageCreate', (message) => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
+//bot 실행
